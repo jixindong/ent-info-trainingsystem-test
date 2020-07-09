@@ -1,0 +1,209 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+*::selection {
+	color: #fff;
+	background-color: #93d5dc;
+}
+a {
+	text-decoration: none;
+}
+// 隐藏滚动条
+::-webkit-scrollbar {
+	width: 0;
+}
+.main {
+	display: flex;
+	flex-flow: column nowrap;
+	min-height: 100vh;
+}
+// 版心
+.container {
+	position: relative;
+	margin: 0 auto;
+	width: 1200px;
+	min-width: 1200px;
+}
+// flex盒子
+.fRow {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+}
+.fColumn {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+}
+// 鼠标悬停
+.hover:hover {
+	opacity: 0.8;
+	cursor: pointer;
+}
+// 网站头部装饰线
+.headLine {
+	min-width: 1200px;
+	height: 10px;
+	background-color: #ab812d;
+}
+
+// 企业详情主栏
+.entDtlMain {
+	padding: 10px;
+	width: 1000px;
+	color: #333;
+	font-size: 14px;
+	background-color: #fff;
+	box-shadow: 0 1px 3px #ccc;
+	.mainTitle {
+		padding: 10px 0;
+		font-size: 16px;
+		border-bottom: 1px solid #e5e5e5;
+		span {
+			margin: 0 5px;
+		}
+	}
+	.entDtlTb {
+		margin: 10px 0;
+		width: 100%;
+		&.noPublicity {
+			background-color: #f1f1f1;
+			.title {
+				position: relative;
+				margin-left: 20px;
+				color: #804000;
+				font-size: 16px;
+				&::before {
+					position: absolute;
+					top: 2px;
+					left: -16px;
+					width: 8px;
+					height: 16px;
+					content: '';
+					background-color: #804000;
+				}
+			}
+		}
+		th {
+			padding: 4px 20px;
+			font-weight: normal;
+			text-align: right;
+		}
+		td {
+			padding: 4px 15px;
+			input[type='text'],
+			input[type='number'],
+			select {
+				padding: 6px 10px;
+				width: 100%;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+			}
+			input[type='text'],
+			input[type='number'] {
+				padding: 10px;
+				&.iptSl {
+					width: 90px;
+				}
+				&:read-only {
+					background-color: #eee;
+				}
+			}
+			input[type='radio'] {
+				position: relative;
+				top: 3px;
+				margin: 0 5px;
+				width: 16px;
+				height: 16px;
+			}
+		}
+	}
+	.entDtlTbII {
+		margin: 10px 0;
+		width: 100%;
+		border-collapse: collapse;
+		th,
+		td {
+			padding: 10px 8px;
+			border: 1px solid #ddd;
+		}
+		th {
+			color: #9b7d46;
+			background-color: #eae3db;
+		}
+		td {
+			text-align: center;
+			.operation {
+				margin: 0 5px;
+				color: #0094ff;
+			}
+		}
+	}
+	.entDtlTbIII {
+		margin: 10px 0;
+		width: 100%;
+		border-collapse: collapse;
+		th,
+		td {
+			padding: 10px 5px;
+			border: 1px solid #eee;
+		}
+		th {
+			color: #9b7d46;
+			text-align: right;
+			background-color: #eae3db;
+			&.textCenter {
+				text-align: center;
+			}
+		}
+		td {
+			padding: 10px;
+			&.w130 {
+				width: 130px;
+			}
+			.elDatePicker input[type='text'] {
+				padding: 10px 30px;
+				&:focus {
+					border-color: #d4b562;
+				}
+			}
+			input[type='text'],
+			input[type='number'],
+			select {
+				padding: 10px;
+				width: 100%;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				&.w80 {
+					width: 80%;
+				}
+			}
+			input[type='radio'],
+			input[type='checkbox'] {
+				position: relative;
+				top: 3px;
+				margin: 0 5px;
+				width: 16px;
+				height: 16px;
+			}
+			span {
+				margin-left: 5px;
+			}
+		}
+	}
+	.btnBox {
+		margin: 40px 0 20px;
+		.btn {
+			margin: 0 10px;
+			padding: 10px 30px;
+			color: #fff;
+			background-color: #d4b562;
+			border-radius: 4px;
+		}
+	}
+}
+// 企业详情主栏 end
