@@ -16,15 +16,15 @@
 					<!-- 企业信息面板 头部 -->
 					<div class="panelHd fRow">
 						<div class="time fRow">
-							<img src="../assets/time.png" />
+							<img src="@/assets/time.png" />
 							<span>{{ currentTime }}</span>
 						</div>
 						<div class="enterprise fRow">
-							<img src="../assets/employee.png" />
+							<img src="@/assets/employee.png" />
 							<span>{{ entInfo.entName }}</span>
 						</div>
 						<div class="quit fRow hover" @click="quit()">
-							<img src="../assets/quit.png" />
+							<img src="@/assets/quit.png" />
 							<span>退出登录</span>
 						</div>
 					</div>
@@ -59,10 +59,10 @@ import { mapState } from 'vuex';
 export default {
 	name: 'EnterpriseDetail',
 	components: {
-		EnterpriseInfoHdBar: () => import('../components/EnterpriseInfoHdBar.vue'), //企业信息导航栏
-		EnterpriseInfoBanner: () => import('../components/EnterpriseInfoBanner.vue'), //企业信息banner
-		EnterpriseDtlSidebar: () => import('../components/EnterpriseDtlSidebar.vue'), //企业详情侧边栏
-		EnterpriseInfoFtBar: () => import('../components/EnterpriseInfoFtBar.vue') //企业信息底部栏
+		EnterpriseInfoHdBar: () => import('@/components/EnterpriseInfoHdBar.vue'), //企业信息导航栏
+		EnterpriseInfoBanner: () => import('@/components/EnterpriseInfoBanner.vue'), //企业信息banner
+		EnterpriseDtlSidebar: () => import('./components/EnterpriseDtlSidebar.vue'), //企业详情侧边栏
+		EnterpriseInfoFtBar: () => import('@/components/EnterpriseInfoFtBar.vue') //企业信息底部栏
 	},
 	data: function() {
 		return {

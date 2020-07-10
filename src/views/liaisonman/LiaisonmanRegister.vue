@@ -6,7 +6,7 @@
 		<!-- banner -->
 		<div class="banner fRow">
 			<div class="container fRow">
-				<img src="../assets/national-emblem.png" />
+				<img src="@/assets/national-emblem.png" />
 				<span>{{ prAndBkt }}</span>
 			</div>
 		</div>
@@ -17,7 +17,7 @@
 				<div class="registerBox fColumn">
 					<div class="row fRow">
 						<div class="title">统一社会信用代码/注册号</div>
-						<div class="iptBox"><input class="ipt" type="text" placeholder="统一社会信用代码/注册号" v-model="entCode" /></div>
+						<div class="iptBox"><input class="ipt" type="text" maxlength="18" placeholder="统一社会信用代码/注册号" v-model="entCode" /></div>
 					</div>
 					<div class="row fRow">
 						<div class="title">企业名称</div>
@@ -32,25 +32,13 @@
 						<div class="iptBox"><input class="ipt" type="text" maxlength="18" placeholder="法定代表人（负责人）证件号码" v-model="legalpersonIdNum" /></div>
 					</div>
 					<div class="row fRow">
-						<div class="title">原联络员姓名</div>
-						<div class="iptBox"><input class="ipt" type="text" placeholder="原联络员姓名" v-model="oEntPersonName" /></div>
+						<div class="title">联络员姓名</div>
+						<div class="iptBox"><input class="ipt" type="text" placeholder="联络员姓名" v-model="entPersonName" /></div>
 					</div>
 					<div class="row fRow">
-						<div class="title">原联络员证件号码</div>
-						<div class="iptBox"><input class="ipt" type="text" maxlength="18" placeholder="原联络员证件号码" v-model="oEntPersonIdNum" /></div>
-					</div>
-					<div class="row fRow">
-						<div class="title">原联络员手机号码</div>
-						<div class="iptBox"><input class="ipt" type="text" maxlength="12" placeholder="原联络员手机号码" v-model="oEntPersonTel" /></div>
-					</div>
-					<div class="row fRow">
-						<div class="title">新联络员姓名</div>
-						<div class="iptBox"><input class="ipt" type="text" placeholder="新联络员姓名" v-model="nEntPersonName" /></div>
-					</div>
-					<div class="row fRow">
-						<div class="title">新联络员证件类型</div>
+						<div class="title">联络员证件类型</div>
 						<div class="iptBox">
-							<select name="IDType" v-model="nEntPersonIdType">
+							<select name="IDType" v-model="entPersonIdType">
 								<option value="中华人民共和国居民身份证">中华人民共和国居民身份证</option>
 								<option value="士兵证">士兵证</option>
 								<option value="军官证">军官证</option>
@@ -59,12 +47,12 @@
 						</div>
 					</div>
 					<div class="row fRow">
-						<div class="title">新联络员证件号码</div>
-						<div class="iptBox"><input class="ipt" type="text" maxlength="18" placeholder="新联络员证件号码" v-model="nEntPersonIdNum" /></div>
+						<div class="title">联络员证件号码</div>
+						<div class="iptBox"><input class="ipt" type="text" maxlength="18" placeholder="联络员证件号码" v-model="entPersonIdNum" /></div>
 					</div>
 					<div class="row fRow">
-						<div class="title">新联络员手机号码</div>
-						<div class="iptBox"><input class="ipt" type="text" maxlength="11" placeholder="新联络员手机号码" v-model="nEntPersonTel" /></div>
+						<div class="title">联络员手机号码</div>
+						<div class="iptBox"><input class="ipt" type="text" maxlength="11" placeholder="联络员手机号码" v-model="entPersonTel" /></div>
 					</div>
 
 					<div class="fRow">
@@ -88,12 +76,12 @@
 
 			<!-- 头部 关闭按钮 -->
 			<template v-slot:reBoxHdCloseBtn>
-				<img src="../assets/close.png" @click="closeReBox()" />
+				<img src="@/assets/close.png" @click="closeReBox()" />
 			</template>
 
 			<!-- 主体 -->
 			<template v-slot:reBoxBd>
-				<div class="doc">联络员修改成功，请登录</div>
+				<div class="doc">联络员注册成功，请登录</div>
 			</template>
 
 			<!-- 按钮盒子 -->
@@ -107,10 +95,10 @@
 
 <script>
 export default {
-	name: 'LiaisonmanModify',
+	name: 'LiaisonmanRegister',
 	components: {
-		EnterpriseInfoFtBar: () => import('../components/EnterpriseInfoFtBar.vue'), //企业信息底部栏
-		RemovableBox: () => import('../components/RemovableBox.vue') //提醒弹框
+		EnterpriseInfoFtBar: () => import('@/components/EnterpriseInfoFtBar.vue'), //企业信息底部栏
+		RemovableBox: () => import('@/components/RemovableBox.vue') //提醒弹框
 	},
 	data: function() {
 		return {
@@ -119,14 +107,10 @@ export default {
 			entCode: '', //企业统一社会信用代码
 			legalpersonName: '', //法定代表人（负责人）姓名
 			legalpersonIdNum: '', //法定代表人（负责人）证件号码
-			oEntPersonName: '', //原联络员姓名
-			oEntPersonIdNum: '', //原联络员证件号码
-			oEntPersonTel: '', //原联络员手机号
-			nEntPersonName: '', //新联络员姓名
-			nEntPersonIdType: '中华人民共和国居民身份证', //新联络员证件类型
-			nEntPersonIdNum: '', //新联络员证件号码
-			nEntPersonTel: '', //新联络员手机号
-			verifyUser: '', //已匹配待验证用户信息
+			entPersonName: '', //联络员姓名
+			entPersonIdType: '中华人民共和国居民身份证', //联络员证件类型
+			entPersonIdNum: '', //联络员证件号码
+			entPersonTel: '', //联络员手机号
 			isReBoxShow: false //提醒弹框 显示
 		};
 	},
@@ -136,28 +120,19 @@ export default {
 			return this.$store.state.users;
 		},
 		//省份加括号
-		prAndBkt: function() {
+		prAndBkt() {
 			return '(' + this.province + ')';
 		}
 	},
 	watch: {
 		//企业统一社会信用代码
-		entCode: function(e) {
-			if (e) {
-				this.verifyUser = '';
+		entCode(e) {
+			if (e.length < 18) {
 				this.entName = '';
 				this.legalpersonName = '';
-				this.users.forEach(user => {
-					if (e == user.entCode) {
-						this.verifyUser = user;
-						this.entName = user.entName;
-						this.legalpersonName = user.entPersonName;
-					}
-				});
 			} else {
-				this.verifyUser = '';
-				this.entName = '';
-				this.legalpersonName = '';
+				this.entName = '江苏问云电子商务有限公司';
+				this.legalpersonName = '王鑫';
 			}
 		}
 	},
@@ -171,33 +146,14 @@ export default {
 			let regIdNum = new RegExp(/^[1-9]\d{5}(18|19|20)\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/);
 			let regTel = new RegExp(/^[1]([3-9])[0-9]{9}$/);
 
-			if (
-				!this.entCode ||
-				!this.legalpersonName ||
-				!this.legalpersonIdNum ||
-				!this.oEntPersonName ||
-				!this.oEntPersonIdNum ||
-				!this.oEntPersonTel ||
-				!this.nEntPersonName ||
-				!this.nEntPersonIdNum ||
-				!this.nEntPersonTel
-			) {
+			if (!this.entCode || !this.legalpersonName || !this.legalpersonIdNum || !this.entPersonName || !this.entPersonIdNum || !this.entPersonTel) {
 				this.$message.error('请完善信息');
+			} else if (!regIdNum.test(this.legalpersonIdNum) || !regIdNum.test(this.entPersonIdNum)) {
+				this.$message.error('法人或联络员证件号码有误');
+			} else if (!regTel.test(this.entPersonTel)) {
+				this.$message.error('手机号码格式有误');
 			} else {
-				if (
-					this.legalpersonIdNum != this.verifyUser.legalpersonIdNum ||
-					this.oEntPersonName != this.verifyUser.entPersonName ||
-					this.oEntPersonIdNum != this.verifyUser.entPersonIdNum ||
-					this.oEntPersonTel != this.verifyUser.entPersonTel
-				) {
-					this.$message.error('法人证件号或原联络员信息有误');
-				} else if (!regIdNum.test(this.nEntPersonIdNum)) {
-					this.$message.error('新联络员证件号码有误');
-				} else if (!regTel.test(this.nEntPersonTel)) {
-					this.$message.error('手机号码格式有误');
-				} else {
-					this.isReBoxShow = true;
-				}
+				this.isReBoxShow = true;
 			}
 		},
 		// 关闭 提醒弹框
@@ -206,18 +162,18 @@ export default {
 		},
 		// 提醒弹框 确定按钮
 		reBoxSure() {
-			let modifyUser = {
+			let addUser = {
 				entName: this.entName, //企业名称
 				entCode: this.entCode, //企业统一社会信用代码
 				legalpersonName: this.legalpersonName, //法定代表人（负责人）姓名
 				legalpersonIdNum: this.legalpersonIdNum, //法定代表人（负责人）证件号码
-				entPersonName: this.nEntPersonName, //新联络员姓名
-				entPersonIdType: this.nEntPersonIdType, //新联络员证件类型
-				entPersonIdNum: this.nEntPersonIdNum, //新联络员证件号码
-				entPersonTel: this.nEntPersonTel //新联络员手机号
+				entPersonName: this.entPersonName, //工商联络员姓名
+				entPersonIdType: this.entPersonIdType, //工商联络员证件类型
+				entPersonIdNum: this.entPersonIdNum, //工商联络员证件号码
+				entPersonTel: this.entPersonTel //工商联络员手机号
 			};
 
-			this.$store.dispatch('modifyUser', modifyUser); //修改用户
+			this.$store.dispatch('addUser', addUser); //添加用户
 			this.isReBoxShow = false;
 			this.back();
 		},
@@ -240,7 +196,7 @@ export default {
 .banner {
 	min-width: 1200px;
 	height: 108px;
-	background: url('../assets/index-bg2.png') center/cover no-repeat;
+	background: url('../../assets/index-bg2.png') center/cover no-repeat;
 	box-shadow: 0 1px 3px #ccc;
 	z-index: 1;
 	user-select: none;

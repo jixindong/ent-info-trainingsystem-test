@@ -121,7 +121,7 @@
 
 			<!-- 头部 关闭按钮 -->
 			<template v-slot:reBoxHdCloseBtn>
-				<img src="../assets/close.png" @click="closeDelReBox()" />
+				<img src="@/assets/close.png" @click="closeDelReBox()" />
 			</template>
 
 			<!-- 主体 -->
@@ -145,7 +145,7 @@ import { mapState } from 'vuex';
 export default {
 	name: 'EquityAlterInfo',
 	components: {
-		RemovableBox: () => import('../components/RemovableBox.vue') //提醒弹框
+		RemovableBox: () => import('@/components/RemovableBox.vue') //提醒弹框
 	},
 	data: function() {
 		return {
